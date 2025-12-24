@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>买镀铝锌找敬宣小刘 - 发财热线：18652452035</title>
+    <style>
+        /* 颜色定义 - 与Python版本一致 */
+        :root {
+            --bg-color: #f5f7fa;
+            --frame-color: #ffffff;
+            --accent-color: #2d6ef5;
+            --accent-light: #4a8cff;
+            --success-color: #28a745;
+            --success-light: #34ce57;
+            --error-color: #dc3545;
+            --error-light: #e4606d;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --border-color: #dee2e6;
+            --hover-color: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部标题栏 */
+        .top-toolbar {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin: 10px 0 15px 0;
+            box-shadow: 0 4px 15px rgba(45, 110, 245, 0.3);
+            padding: 15px 20px;
+        }
+
+        .title-frame {
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .title-label {
+            font-size: clamp(20px, 5vw, 28px);
+            font-weight: bold;
+            color: white;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle-label {
+            font-size: clamp(12px, 3vw, 16px);
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
+        /* 主内容区域 */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: auto;
+        }
+
+        .left-panel {
+            width: 100%;
+            min-width: auto;
+            max-height: none;
+            overflow-y: visible;
+            padding-right: 0;
+        }
+
+        .right-panel {
+            width: 100%;
+            min-width: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 表单样式 */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            padding: 8px 0;
+            gap: 8px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-item {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-label {
+            width: 100px;
+            font-size: 14px;
+            color: var(--text-primary);
+            margin-right: 8px;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .total-weight-item {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-input {
+            flex: 1;
+            padding: 10px 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            min-width: 120px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(45, 110, 245, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .form-input.readonly {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            border-color: #ced4da;
+        }
+
+        .error-frame {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 200px;
+            justify-content: space-between;
+        }
+
+        .error-frame .form-input {
+            width: 45%;
+            min-width: 80px;
+            text-align: center;
+            padding: 10px 8px;
+            flex: none;
+        }
+
+        .error-frame span {
+            color: var(--text-secondary);
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        /* 行容器样式 */
+        .row-container {
+            margin-bottom: 15px;
+        }
+
+        .row-header {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--accent-color);
+            padding: 0 8px;
+            gap: 10px;
+        }
+
+        .row-header > div {
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .row-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 10px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            gap: 10px;
+        }
+
+        .row-item:hover {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            transform: translateX(4px);
+        }
+
+        .row-item > * {
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .width-input {
+            min-width: 100px;
+        }
+
+        .count-conditions {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: white;
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+            flex-wrap: wrap;
+            min-width: 150px;
+        }
+
+        .count-input {
+            width: 50px;
+            padding: 4px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: center;
+            transition: all 0.2s ease;
+            min-width: 40px;
+        }
+
+        .count-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(45, 110, 245, 0.1);
+        }
+
+        .count-input:disabled {
+            background: #f8f9fa;
+            color: var(--text-secondary);
+            cursor: not-allowed;
+        }
+
+        .delete-btn {
+            background: linear-gradient(135deg, var(--error-color) 0%, var(--error-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 50px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+            flex-shrink: 0;
+        }
+
+        .delete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+        }
+
+        /* 按钮样式 */
+        .add-btn {
+            background: linear-gradient(135deg, var(--success-color) 0%, var(--success-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 3px 6px rgba(40, 167, 69, 0.3);
+            width: 100%;
+        }
+
+        .add-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .action-btn:hover::before {
+            left: 100%;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, var(--success-color) 0%, var(--success-light) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+        }
+
+        .clear-btn {
+            background: linear-gradient(135deg, var(--error-color) 0%, var(--error-light) 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+        }
+
+        .clear-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.6);
+        }
+
+        /* 结果区域 */
+        .result-area {
+            flex: 1;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 15px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .result-text {
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            overflow-x: hidden;
+        }
+
+        /* 文本样式类 */
+        .text-success { color: var(--success-color); font-weight: bold; }
+        .text-error { color: var(--error-color); font-weight: bold; }
+        .text-warning { color: var(--warning-color); }
+        .text-info { color: var(--info-color); }
+        .text-combo-header { color: var(--accent-color); font-weight: bold; }
+        .text-virtual { color: #6a994e; }
+        .text-price { color: #e63946; font-weight: bold; }
+
+        /* 复选框样式 */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            border: 2px solid #ced4da;
+            border-radius: 4px;
+            background: white;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .checkbox:checked {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .top-toolbar {
+                margin: 5px 0 10px 0;
+                padding: 10px 15px;
+            }
+            
+            .card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .form-group {
+                gap: 10px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .form-item {
+                min-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .total-weight-item {
+                min-width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .form-label {
+                width: 80px;
+                font-size: 13px;
+                flex-shrink: 0;
+                text-align: left;
+            }
+            
+            .form-input {
+                font-size: 13px;
+                padding: 8px 10px;
+                flex: 1;
+                min-width: 120px;
+                margin-left: 8px;
+            }
+            
+            .error-frame {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                width: 100%;
+                max-width: 180px;
+                margin-left: 8px;
+                justify-content: space-between;
+            }
+            
+            .error-frame .form-input {
+                width: 45%;
+                min-width: 70px;
+                text-align: center;
+                padding: 8px 6px;
+                font-size: 12px;
+                flex: none;
+            }
+            
+            .error-frame span {
+                color: var(--text-secondary);
+                font-weight: 500;
+                flex-shrink: 0;
+                font-size: 12px;
+            }
+            
+            .row-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .row-item {
+                flex-direction: column;
+                gap: 8px;
+                padding: 8px;
+            }
+            
+            .row-item > * {
+                min-width: 100%;
+            }
+            
+            .count-conditions {
+                justify-content: center;
+                min-width: 100%;
+            }
+            
+            .action-buttons {
+                gap: 10px;
+            }
+            
+            .action-btn {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+            
+            .result-text {
+                font-size: 13px;
+                min-height: 200px;
+                max-height: 400px;
+                padding: 10px;
+            }
+            
+            .add-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            
+            .delete-btn {
+                padding: 4px 8px;
+                font-size: 11px;
+                min-width: 40px;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .form-item {
+                min-width: 180px;
+            }
+            
+            .row-item {
+                flex-wrap: nowrap;
+            }
+            
+            .row-item > * {
+                flex: 1;
+                min-width: 0;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .main-container {
+                flex-direction: row;
+            }
+            
+            .left-panel {
+                width: 60%;
+            }
+            
+            .right-panel {
+                width: 38%;
+            }
+            
+            .action-buttons {
+                flex-direction: row;
+            }
+            
+            .action-btn {
+                width: auto;
+            }
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .form-input:focus {
+                transform: none;
+            }
+            
+            .action-btn:hover, .add-btn:hover, .delete-btn:hover {
+                transform: none;
+            }
+            
+            .row-item:hover {
+                transform: none;
+            }
+            
+            .card:hover {
+                transform: none;
+            }
+        }
+        
+        /* 高分辨率屏幕优化 */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .form-input {
+                border-width: 1px;
+            }
+            
+            .result-text {
+                border-width: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题栏 -->
+        <div class="top-toolbar">
+            <div class="title-frame">
+                <div class="title-label">买镀铝锌找敬宣小刘</div>
+                <div class="subtitle-label">发财热线：18652452035</div>
+            </div>
+        </div>
+
+        <!-- 主内容区域 -->
+        <div class="main-container">
+            <!-- 左侧参数区域 -->
+            <div class="left-panel">
+                <!-- 基础参数卡片 -->
+                <div class="card">
+                    <div class="card-header">📋 基础参数</div>
+                    
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label class="form-label">原始宽度 (mm):</label>
+                                <input type="number" id="originalWidth" class="form-input" step="0.1" min="0">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label">内径 (mm):</label>
+                                <input type="number" id="innerDiameter" class="form-input" step="0.1" min="0" value="508.0">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label class="form-label">总重量 (吨):</label>
+                                <input type="text" id="totalWeight" class="form-input readonly" readonly value="0.000">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label">允许误差 (mm):</label>
+                                <div class="error-frame">
+                                    <input type="number" id="minError" class="form-input" step="0.1" min="0" placeholder="最小">
+                                    <span> ~ </span>
+                                    <input type="number" id="maxError" class="form-input" step="0.1" min="0" placeholder="最大">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size: 12px; color: var(--text-secondary); margin-top: 5px;">
+                        留空时：最小=0，最大=最窄目标宽度
+                    </div>
+                </div>
+
+                <!-- 价格参数卡片 -->
+                <div class="card">
+                    <div class="card-header">💰 价格参数 (可选)</div>
+                    
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label class="form-label">原卷单价:</label>
+                                <input type="number" id="originalPrice" class="form-input" step="0.01" min="0" placeholder="元/吨">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label">加工费:</label>
+                                <input type="number" id="processingFee" class="form-input" step="0.01" min="0" placeholder="元/吨">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label class="form-label">运输费:</label>
+                                <input type="number" id="transportFee" class="form-input" step="0.01" min="0" placeholder="元/吨">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label">废铁单价:</label>
+                                <input type="number" id="scrapPrice" class="form-input" step="0.01" min="0" placeholder="元/吨">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 明细件重卡片 -->
+                <div class="card">
+                    <div class="card-header">⚖️ 明细件重 (可选)</div>
+                    
+                    <div class="row-header">
+                        <div style="width: 100px;">重量 (吨)</div>
+                        <div style="width: 100px;">外径 (米)</div>
+                        <div style="width: 60px;">操作</div>
+                    </div>
+                    
+                    <div id="detailRowContainer" class="row-container">
+                        <!-- 明细行将通过JavaScript动态添加 -->
+                    </div>
+                    
+                    <button class="add-btn" onclick="addDetailRow()">➕ 添加明细行</button>
+                </div>
+
+                <!-- 目标宽度卡片 -->
+                <div class="card">
+                    <div class="card-header">📏 目标宽度配置</div>
+                    
+                    <div class="row-header">
+                        <div style="width: 100px;">宽度 (mm)</div>
+                        <div style="width: 150px;">数量条件</div>
+                        <div style="width: 60px;">操作</div>
+                    </div>
+                    
+                    <div id="targetRowContainer" class="row-container">
+                        <!-- 目标宽度行将通过JavaScript动态添加 -->
+                    </div>
+                    
+                    <button class="add-btn" onclick="addTargetRow()">➕ 添加目标宽度行</button>
+                </div>
+            </div>
+
+            <!-- 右侧结果区域 -->
+            <div class="right-panel">
+                <!-- 操作按钮区域 -->
+                <div class="action-buttons">
+                    <button class="action-btn calculate-btn" onclick="calculateCombinations()">🚀 开始计算</button>
+                    <button class="action-btn clear-btn" onclick="clearData()">🗑️ 清除数据</button>
+                </div>
+
+                <!-- 结果输出区域 -->
+                <div class="result-area">
+                    <div class="card-header">📈 计算结果</div>
+                    <div id="resultText" class="result-text">请填写左侧参数，然后点击【开始计算】按钮</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let targetRows = [];
+        let detailRows = [];
+        const DEFAULT_INNER_DIAMETER = 508.0;
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 添加5个目标宽度行
+            for (let i = 0; i < 5; i++) {
+                addTargetRow();
+            }
+            
+            // 添加1个明细件重行
+            for (let i = 0; i < 1; i++) {
+                addDetailRow();
+            }
+            
+            // 绑定事件监听器
+            document.getElementById('originalWidth').addEventListener('input', updateAllOuterDiameters);
+            document.getElementById('innerDiameter').addEventListener('input', updateAllOuterDiameters);
+        });
+
+        // 验证输入
+        function validateInput(value, fieldName) {
+            if (!value) {
+                throw new Error(`${fieldName} 不能为空`);
+            }
+            const num = parseFloat(value);
+            if (isNaN(num)) {
+                throw new Error(`${fieldName} 必须是有效的数字`);
+            }
+            if (num < 0) {
+                throw new Error(`${fieldName} 不能为负数`);
+            }
+            return num;
+        }
+
+        // 验证价格参数
+        function validatePriceOrZero(value, fieldName) {
+            if (!value || value.trim() === "") {
+                return 0.0;
+            }
+            const price = parseFloat(value);
+            if (isNaN(price)) {
+                throw new Error(`${fieldName} 必须是有效的数字`);
+            }
+            if (price < 0) {
+                throw new Error(`${fieldName} 不能为负数`);
+            }
+            return price;
+        }
+
+        // 计算明细件重的总和
+        function sumDetailWeights() {
+            let totalWeight = 0.0;
+            for (const row of detailRows) {
+                const weight = row.weightInput.value;
+                if (weight) {
+                    try {
+                        totalWeight += parseFloat(weight);
+                    } catch (e) {
+                        // 忽略无效输入
+                    }
+                }
+            }
+            return totalWeight;
+        }
+
+        // 更新总重量显示
+        function updateTotalWeight() {
+            const total = sumDetailWeights();
+            const totalWeightInput = document.getElementById('totalWeight');
+            totalWeightInput.value = total.toFixed(3);
+            
+            if (total === 0) {
+                totalWeightInput.style.color = '#ffc107';
+            } else {
+                totalWeightInput.style.color = 'var(--text-primary)';
+            }
+        }
+
+        // 计算外径
+        function calculateOuterDiameter(weightTons) {
+            try {
+                const originalWidthStr = document.getElementById('originalWidth').value;
+                const innerDiameterStr = document.getElementById('innerDiameter').value;
+                
+                if (!originalWidthStr) {
+                    return "需要原始宽度";
+                }
+                
+                // 如果内径为空，使用默认值
+                const innerDiameterMm = innerDiameterStr ? parseFloat(innerDiameterStr) : DEFAULT_INNER_DIAMETER;
+                const originalWidthMm = parseFloat(originalWidthStr);
+                
+                // 参数合理性检查
+                if (originalWidthMm <= 0) return "原始宽度需大于0";
+                if (innerDiameterMm <= 0) return "内径需大于0";
+                if (innerDiameterMm >= originalWidthMm) return `内径(${innerDiameterMm}mm)不能大于等于原始宽度(${originalWidthMm}mm)`;
+                if (weightTons <= 0) return "重量需大于0";
+                
+                const innerDiameterM = innerDiameterMm / 1000;
+                const originalWidthM = originalWidthMm / 1000;
+                const weightKg = weightTons * 1000;
+                
+                const density = 7850;
+                const volume = weightKg / density;
+                const crossSectionArea = volume / originalWidthM;
+                const outerDiameterM = Math.sqrt((4 * crossSectionArea) / Math.PI + Math.pow(innerDiameterM, 2));
+                
+                // 检查计算结果的合理性
+                if (outerDiameterM <= innerDiameterM) return "计算错误：外径小于等于内径";
+                if (outerDiameterM > 20) return "警告：计算外径过大，请检查输入参数";
+                
+                return outerDiameterM;
+            } catch (e) {
+                return `计算错误: ${e.message}`;
+            }
+        }
+
+        // 更新外径计算结果
+        function updateOuterDiameter(row) {
+            try {
+                const weightStr = row.weightInput.value;
+                if (!weightStr) {
+                    row.outerDiameterInput.value = "";
+                    return;
+                }
+                
+                const weightTons = parseFloat(weightStr);
+                const outerDiameter = calculateOuterDiameter(weightTons);
+                
+                if (typeof outerDiameter === 'string') {
+                    row.outerDiameterInput.value = outerDiameter;
+                    row.outerDiameterInput.style.color = 'var(--error-color)';
+                } else {
+                    row.outerDiameterInput.value = outerDiameter.toFixed(3) + " 米";
+                    row.outerDiameterInput.style.color = 'var(--success-color)';
+                }
+            } catch (e) {
+                row.outerDiameterInput.value = "错误";
+                row.outerDiameterInput.style.color = 'var(--error-color)';
+            }
+        }
+
+        // 更新所有外径计算结果
+        function updateAllOuterDiameters() {
+            for (const row of detailRows) {
+                updateOuterDiameter(row);
+            }
+        }
+
+        // 重量输入变化时的回调
+        function onWeightEntryChange(row) {
+            updateTotalWeight();
+            updateOuterDiameter(row);
+        }
+
+        // 更新最小数量输入框状态
+        function updateMinCountState(row) {
+            const minCountInput = row.minCountInput;
+            if (row.minCheckbox.checked) {
+                minCountInput.disabled = false;
+                minCountInput.style.backgroundColor = '#f0f8ff';
+            } else {
+                minCountInput.disabled = true;
+                minCountInput.value = '';
+                minCountInput.style.backgroundColor = 'white';
+            }
+        }
+
+        // 更新最大数量输入框状态
+        function updateMaxCountState(row) {
+            const maxCountInput = row.maxCountInput;
+            if (row.maxCheckbox.checked) {
+                maxCountInput.disabled = false;
+                maxCountInput.style.backgroundColor = '#f0f8ff';
+            } else {
+                maxCountInput.disabled = true;
+                maxCountInput.value = '';
+                maxCountInput.style.backgroundColor = 'white';
+            }
+        }
+
+        // 添加目标宽度输入行
+        function addTargetRow() {
+            const container = document.getElementById('targetRowContainer');
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'row-item';
+            
+            const widthInput = document.createElement('input');
+            widthInput.type = 'number';
+            widthInput.className = 'form-input width-input';
+            widthInput.step = '0.1';
+            widthInput.min = '0';
+            widthInput.placeholder = '宽度 (mm)';
+            
+            const countContainer = document.createElement('div');
+            countContainer.className = 'count-conditions';
+            
+            const minCheckbox = document.createElement('input');
+            minCheckbox.type = 'checkbox';
+            minCheckbox.className = 'checkbox';
+            
+            const minCountInput = document.createElement('input');
+            minCountInput.type = 'number';
+            minCountInput.className = 'count-input';
+            minCountInput.min = '0';
+            minCountInput.disabled = true;
+            minCountInput.placeholder = '最小';
+            
+            const maxCheckbox = document.createElement('input');
+            maxCheckbox.type = 'checkbox';
+            maxCheckbox.className = 'checkbox';
+            
+            const maxCountInput = document.createElement('input');
+            maxCountInput.type = 'number';
+            maxCountInput.className = 'count-input';
+            maxCountInput.min = '0';
+            maxCountInput.disabled = true;
+            maxCountInput.placeholder = '最大';
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = '❌';
+            deleteBtn.onclick = function() {
+                deleteTargetRow(row);
+            };
+            
+            // 绑定事件
+            minCheckbox.onchange = function() {
+                updateMinCountState(row);
+            };
+            
+            maxCheckbox.onchange = function() {
+                updateMaxCountState(row);
+            };
+            
+            // 组装行
+            countContainer.appendChild(minCheckbox);
+            countContainer.appendChild(document.createTextNode('≥'));
+            countContainer.appendChild(minCountInput);
+            countContainer.appendChild(document.createTextNode('≤'));
+            countContainer.appendChild(maxCheckbox);
+            countContainer.appendChild(maxCountInput);
+            
+            rowDiv.appendChild(widthInput);
+            rowDiv.appendChild(countContainer);
+            rowDiv.appendChild(deleteBtn);
+            
+            container.appendChild(rowDiv);
+            
+            const row = {
+                element: rowDiv,
+                widthInput: widthInput,
+                minCheckbox: minCheckbox,
+                minCountInput: minCountInput,
+                maxCheckbox: maxCheckbox,
+                maxCountInput: maxCountInput
+            };
+            
+            targetRows.push(row);
+            return row;
+        }
+
+        // 删除目标宽度输入行
+        function deleteTargetRow(row) {
+            if (targetRows.length > 1) {
+                const index = targetRows.indexOf(row);
+                if (index > -1) {
+                    targetRows.splice(index, 1);
+                    row.element.remove();
+                }
+            }
+        }
+
+        // 添加明细件重输入行
+        function addDetailRow() {
+            const container = document.getElementById('detailRowContainer');
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'row-item';
+            
+            const weightInput = document.createElement('input');
+            weightInput.type = 'number';
+            weightInput.className = 'form-input width-input';
+            weightInput.step = '0.001';
+            weightInput.min = '0';
+            weightInput.placeholder = '重量 (吨)';
+            
+            const outerDiameterInput = document.createElement('input');
+            outerDiameterInput.type = 'text';
+            outerDiameterInput.className = 'form-input width-input readonly';
+            outerDiameterInput.readOnly = true;
+            outerDiameterInput.placeholder = '外径计算结果';
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = '❌';
+            deleteBtn.onclick = function() {
+                deleteDetailRow(row);
+            };
+            
+            // 绑定事件
+            weightInput.addEventListener('input', function() {
+                onWeightEntryChange(row);
+            });
+            
+            // 组装行
+            rowDiv.appendChild(weightInput);
+            rowDiv.appendChild(outerDiameterInput);
+            rowDiv.appendChild(deleteBtn);
+            
+            container.appendChild(rowDiv);
+            
+            const row = {
+                element: rowDiv,
+                weightInput: weightInput,
+                outerDiameterInput: outerDiameterInput
+            };
+            
+            detailRows.push(row);
+            
+            // 初始化外径计算
+            updateOuterDiameter(row);
+            
+            return row;
+        }
+
+        // 删除明细件重输入行
+        function deleteDetailRow(row) {
+            if (detailRows.length > 1) {
+                const index = detailRows.indexOf(row);
+                if (index > -1) {
+                    detailRows.splice(index, 1);
+                    row.element.remove();
+                    updateTotalWeight();
+                    updateAllOuterDiameters();
+                }
+            }
+        }
+
+        // 清空所有输入数据
+        function clearData() {
+            // 清空基础参数
+            document.getElementById('originalWidth').value = '';
+            document.getElementById('minError').value = '';
+            document.getElementById('maxError').value = '';
+            document.getElementById('innerDiameter').value = DEFAULT_INNER_DIAMETER.toString();
+            
+            // 清空价格参数
+            document.getElementById('originalPrice').value = '';
+            document.getElementById('processingFee').value = '';
+            document.getElementById('transportFee').value = '';
+            document.getElementById('scrapPrice').value = '';
+            
+            // 清空总重量显示
+            document.getElementById('totalWeight').value = '0.000';
+            
+            // 清空目标宽度行（保留前5行）
+            const targetContainer = document.getElementById('targetRowContainer');
+            while (targetRows.length > 5) {
+                const row = targetRows.pop();
+                row.element.remove();
+            }
+            
+            for (const row of targetRows) {
+                row.widthInput.value = '';
+                row.minCheckbox.checked = false;
+                row.minCountInput.value = '';
+                row.minCountInput.disabled = true;
+                row.minCountInput.style.backgroundColor = 'white';
+                row.maxCheckbox.checked = false;
+                row.maxCountInput.value = '';
+                row.maxCountInput.disabled = true;
+                row.maxCountInput.style.backgroundColor = 'white';
+            }
+            
+            // 清空明细件重行（保留前1行）
+            const detailContainer = document.getElementById('detailRowContainer');
+            while (detailRows.length > 1) {
+                const row = detailRows.pop();
+                row.element.remove();
+            }
+            
+            for (const row of detailRows) {
+                row.weightInput.value = '';
+                row.outerDiameterInput.value = '';
+            }
+            
+            // 清空结果区域
+            document.getElementById('resultText').textContent = '请填写参数，然后点击【开始计算】按钮';
+            
+            // 更新总重量显示和外径计算
+            updateTotalWeight();
+            updateAllOuterDiameters();
+        }
+
+        // 核心计算函数
+        function calculateCombinations() {
+            const resultText = document.getElementById('resultText');
+            resultText.innerHTML = '';
+            
+            try {
+                // 获取输入参数（单位：毫米和吨）
+                const originalWidthMm = validateInput(document.getElementById('originalWidth').value, "原始宽度");
+                
+                // 获取总重量，如果没有输入件重，则使用1吨进行成本计算
+                const totalWeightTons = sumDetailWeights();
+                let useVirtualWeight = false;
+                let virtualWeightTons = 1.0;
+                
+                if (totalWeightTons === 0) {
+                    useVirtualWeight = true;
+                    appendResult("⚠️ 未输入件重，成本计算将基于1吨虚拟重量\n", 'warning');
+                } else {
+                    virtualWeightTons = totalWeightTons;
+                }
+                
+                // 收集所有目标宽度（毫米）和条件
+                const targetWidthsMm = [];
+                const constraints = [];
+                
+                for (const row of targetRows) {
+                    const widthMm = row.widthInput.value;
+                    if (!widthMm) continue;
+                    
+                    const width = parseFloat(widthMm);
+                    targetWidthsMm.push(width);
+                    
+                    // 收集约束条件
+                    const minCountStr = row.minCountInput.value;
+                    const maxCountStr = row.maxCountInput.value;
+                    const minCount = row.minCheckbox.checked && minCountStr ? parseInt(minCountStr) : null;
+                    const maxCount = row.maxCheckbox.checked && maxCountStr ? parseInt(maxCountStr) : null;
+                    
+                    if (minCount !== null || maxCount !== null) {
+                        constraints.push({ width: width, min: minCount, max: maxCount });
+                    }
+                }
+                
+                // 基础验证
+                if (targetWidthsMm.length === 0) {
+                    appendResult("错误：请至少输入一个目标宽度！", 'error');
+                    return;
+                }
+                
+                // 检查目标宽度是否重复
+                if (targetWidthsMm.length !== new Set(targetWidthsMm).size) {
+                    appendResult("错误：存在重复的目标宽度，请检查输入！", 'error');
+                    return;
+                }
+                
+                // 检查目标宽度是否为零或负数
+                for (const width of targetWidthsMm) {
+                    if (width <= 0) {
+                        appendResult(`错误：目标宽度 ${width} 必须大于0！`, 'error');
+                        return;
+                    }
+                }
+                
+                // 检查原始宽度是否合理
+                if (originalWidthMm <= 0) {
+                    appendResult("错误：原始宽度必须大于0！", 'error');
+                    return;
+                }
+                
+                // 检查目标宽度是否都小于原始宽度
+                for (const width of targetWidthsMm) {
+                    if (width > originalWidthMm) {
+                        appendResult(`错误：目标宽度 ${width} 毫米大于原始宽度 ${originalWidthMm} 毫米！`, 'error');
+                        return;
+                    }
+                }
+                
+                // 获取误差范围，如果没有输入则使用默认值
+                const minErrorStr = document.getElementById('minError').value;
+                const maxErrorStr = document.getElementById('maxError').value;
+                
+                // 处理最小误差，如果为空则默认为0
+                let minErrorMm = 0;
+                if (minErrorStr) {
+                    minErrorMm = validateInput(minErrorStr, "允许误差最小值");
+                }
+                
+                // 处理最大误差，如果为空则默认为最窄目标宽度
+                let maxErrorMm = 0;
+                if (!maxErrorStr) {
+                    if (targetWidthsMm.length > 0) {
+                        maxErrorMm = Math.min(...targetWidthsMm);
+                        appendResult(`⚠️ 未输入最大允许误差，默认使用最窄目标宽度: ${maxErrorMm.toFixed(1)} mm\n`, 'warning');
+                    }
+                } else {
+                    maxErrorMm = validateInput(maxErrorStr, "允许误差最大值");
+                }
+                
+                if (minErrorMm < 0 || maxErrorMm < 0) {
+                    throw new Error("允许误差范围不能为负数");
+                }
+                if (minErrorMm > maxErrorMm) {
+                    throw new Error("最小允许误差不能大于最大允许误差");
+                }
+                
+                // 价格参数 - 现在价格参数为可选，未填写时默认为0
+                const originalPrice = validatePriceOrZero(document.getElementById('originalPrice').value, "原卷单价");
+                const processingFee = validatePriceOrZero(document.getElementById('processingFee').value, "加工费");
+                const transportFee = validatePriceOrZero(document.getElementById('transportFee').value, "运输费");
+                const scrapPrice = validatePriceOrZero(document.getElementById('scrapPrice').value, "废铁单价");
+                
+                // 价格合理性检查
+                if (originalPrice > 0 && scrapPrice > originalPrice) {
+                    appendResult(`⚠️ 警告：废铁单价(${scrapPrice})高于原料单价(${originalPrice})，请确认是否正确\n`, 'warning');
+                }
+                
+                // 转换为整数处理精度（毫米单位，保留1位小数）
+                const originalWidthInt = Math.round(originalWidthMm * 10);
+                const targetWidthsInt = targetWidthsMm.map(w => Math.round(w * 10));
+                const minTotal = originalWidthInt - Math.round(maxErrorMm * 10);
+                const maxTotal = originalWidthInt - Math.round(minErrorMm * 10);
+                
+                if (minTotal < 0) {
+                    appendResult("错误：允许误差范围太大，最小总宽度为负数！", 'error');
+                    return;
+                }
+                
+                const validCombinations = [];
+                
+                // 递归生成组合（以0.1毫米为最小单位）
+                function backtrack(start, path, currentSum) {
+                    if (currentSum > maxTotal) return;
+                    
+                    if (currentSum >= minTotal && currentSum <= maxTotal) {
+                        // 统计各宽度出现次数
+                        const count = {};
+                        for (const w of path) {
+                            count[w] = (count[w] || 0) + 1;
+                        }
+                        
+                        // 检查约束条件
+                        let valid = true;
+                        for (const constraint of constraints) {
+                            const w = Math.round(constraint.width * 10);
+                            const cnt = count[w] || 0;
+                            if (constraint.min !== null && cnt < constraint.min) {
+                                valid = false;
+                                break;
+                            }
+                            if (constraint.max !== null && cnt > constraint.max) {
+                                valid = false;
+                                break;
+                            }
+                        }
+                        if (!valid) return;
+                        
+                        // 计算重量和边丝（显示单位为毫米和吨）
+                        const totalComboWidthMm = currentSum / 10;
+                        const edgeMm = originalWidthMm - totalComboWidthMm;
+                        
+                        // 检查边丝合理性 - 跳过边丝为负数的组合
+                        if (edgeMm < 0) return;
+                        
+                        // 计算各宽度重量占比
+                        const widthWeights = {};
+                        let totalComboWeightTons = 0;
+                        
+                        // 使用虚拟重量或实际重量进行计算
+                        const calcWeight = useVirtualWeight ? virtualWeightTons : totalWeightTons;
+                        
+                        for (const [w, cnt] of Object.entries(count)) {
+                            const widthMm = parseInt(w) / 10;
+                            const weightRatio = (widthMm * cnt) / originalWidthMm;
+                            const weightTons = Math.round(calcWeight * weightRatio * 1000) / 1000; // 保留3位小数
+                            widthWeights[widthMm] = weightTons;
+                            totalComboWeightTons += weightTons;
+                        }
+                        
+                        const edgeTons = Math.round((calcWeight - totalComboWeightTons) * 1000) / 1000;
+                        
+                        // 计算成品成本
+                        let costPerTon = 0;
+                        if (totalComboWeightTons > 0) {
+                            // 成本计算应该独立于件重，基于单位重量计算
+                            const edgeRatio = edgeMm / originalWidthMm;
+                            const productRatio = totalComboWidthMm / originalWidthMm;
+                            
+                            // 每吨原料的全部成本
+                            const costPerTonRaw = originalPrice + processingFee + transportFee;
+                            // 每吨边丝的回收价值
+                            const scrapValuePerTon = scrapPrice * edgeRatio;
+                            // 每吨成品的净成本
+                            costPerTon = (costPerTonRaw - scrapValuePerTon) / productRatio;
+                        }
+                        
+                        // 计算额外有用信息
+                        const edgePercentage = (edgeMm / originalWidthMm) * 100;
+                        const materialUtilization = 100 - edgePercentage;
+                        
+                        // 格式化组合公式
+                        const formatted = Object.entries(count)
+                            .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+                            .map(([w, c]) => `${(parseInt(w) / 10).toFixed(1)}*${c}`)
+                            .join(" + ");
+                        
+                        validCombinations.push({
+                            formatted,
+                            edgeMm,
+                            widthWeights,
+                            totalComboWeightTons,
+                            edgeTons,
+                            costPerTon,
+                            useVirtualWeight,
+                            edgePercentage,
+                            materialUtilization
+                        });
+                        return;
+                    }
+                    
+                    for (let i = start; i < targetWidthsInt.length; i++) {
+                        backtrack(i, [...path, targetWidthsInt[i]], currentSum + targetWidthsInt[i]);
+                    }
+                }
+                
+                backtrack(0, [], 0);
+                
+                // 智能排序：优先边丝绝对值小，其次是材料利用率高
+                validCombinations.sort((a, b) => {
+                    const edgeDiff = Math.abs(a.edgeMm) - Math.abs(b.edgeMm);
+                    if (edgeDiff !== 0) return edgeDiff;
+                    return b.edgePercentage - a.edgePercentage;
+                });
+                
+                // 检查是否有任何价格参数被填写
+                const anyPriceFilled = originalPrice !== 0 || processingFee !== 0 || transportFee !== 0 || scrapPrice !== 0;
+                
+                // 显示结果
+                if (validCombinations.length === 0) {
+                    appendResult("❌❌ 未找到符合条件的组合！\n", 'error');
+                    appendResult(`原始宽度: ${originalWidthMm.toFixed(1)} 毫米\n`);
+                    appendResult(`允许误差: ${minErrorMm.toFixed(1)} 毫米 至 ${maxErrorMm.toFixed(1)} 毫米\n`);
+                    appendResult(`目标宽度: ${targetWidthsMm.map(w => w.toFixed(1)).join(', ')} 毫米\n`);
+                    appendResult("\n💡 建议:\n", 'info');
+                    appendResult("1. 检查目标宽度设置是否合理\n", 'info');
+                    appendResult("2. 适当放宽允许误差范围\n", 'info');
+                    appendResult("3. 减少约束条件限制\n", 'info');
+                } else {
+                    // 限制显示的最多组合数量，避免界面过载
+                    const maxDisplay = 50;
+                    let displayCombinations;
+                    
+                    if (validCombinations.length > maxDisplay) {
+                        appendResult(`✅ 找到 ${validCombinations.length} 个组合，显示前 ${maxDisplay} 个最优组合:\n`, 'success');
+                        appendResult(`💡 组合过多，建议缩小误差范围或增加约束条件\n`, 'info');
+                        displayCombinations = validCombinations.slice(0, maxDisplay);
+                    } else {
+                        appendResult(`✅ 找到 ${validCombinations.length} 个组合:\n`, 'success');
+                        displayCombinations = validCombinations;
+                    }
+                    
+                    for (let idx = 0; idx < displayCombinations.length; idx++) {
+                        const combo = displayCombinations[idx];
+                        appendResult(`\n【组合 ${idx + 1}】\n`, 'combo-header');
+                        appendResult(`组合公式: ${combo.formatted}\n`);
+                        appendResult(`边丝: ${combo.edgeMm.toFixed(2)} 毫米 (${combo.edgePercentage.toFixed(1)}%), ${combo.edgeTons.toFixed(3)} 吨\n`);
+                        appendResult(`材料利用率: ${combo.materialUtilization.toFixed(1)}%\n`);
+                        
+                        // 如果没有输入件重，显示虚拟重量备注
+                        if (combo.useVirtualWeight) {
+                            appendResult("各宽度总重量 (吨) [虚拟重量]:\n", 'virtual');
+                            appendResult(`成品总重量: ${combo.totalComboWeightTons.toFixed(3)} 吨 [虚拟重量]\n`, 'virtual');
+                        } else {
+                            appendResult("各宽度总重量 (吨):\n");
+                            appendResult(`成品总重量: ${combo.totalComboWeightTons.toFixed(3)} 吨\n`);
+                        }
+                        
+                        // 按宽度排序显示各宽度重量
+                        const sortedWidths = Object.keys(combo.widthWeights)
+                            .map(Number)
+                            .sort((a, b) => a - b);
+                        
+                        for (const width of sortedWidths) {
+                            const weight = combo.widthWeights[width];
+                            appendResult(`  ${width.toFixed(1)}mm: ${weight.toFixed(3)} 吨`);
+                            if (combo.useVirtualWeight) {
+                                appendResult(" [虚拟重量]", 'virtual');
+                            }
+                            appendResult("\n");
+                        }
+                        
+                        if (anyPriceFilled) {
+                            appendResult(`成品成本: ${combo.costPerTon.toFixed(2)} 元/吨`, 'price');
+                            if (combo.useVirtualWeight) {
+                                appendResult(" [基于虚拟重量]", 'virtual');
+                            }
+                            appendResult("\n");
+                        } else {
+                            appendResult("成品成本: 未填写价格参数，按0计算\n", 'info');
+                        }
+                        
+                        if (idx < displayCombinations.length - 1) {
+                            appendResult("-".repeat(50) + "\n");
+                        }
+                    }
+                }
+                
+            } catch (e) {
+                appendResult(`❌❌ 错误: ${e.message}\n`, 'error');
+            }
+        }
+
+        // 辅助函数：向结果区域添加文本
+        function appendResult(text, className = '') {
+            const resultText = document.getElementById('resultText');
+            const span = document.createElement('span');
+            span.textContent = text;
+            if (className) {
+                span.className = `text-${className}`;
+            }
+            resultText.appendChild(span);
+        }
+    </script>
+</body>
+</html>
